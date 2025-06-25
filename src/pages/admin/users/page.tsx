@@ -29,7 +29,7 @@ function UsersPage() {
 			headerName: 'Kullanıcı Adı',
 			width: 300,
 			renderCell: (params: any) => (
-				<Link to={`/admin/users/${params.row['id']}`}>
+				<Link to={`/admin/users/${params.row['id']}/posts`}>
 					{params.row['username']}
 				</Link>
 			),
@@ -44,7 +44,6 @@ function UsersPage() {
 			width: 400,
 			headerName: 'İşlemler',
 			renderCell: (params: any) => {
-				console.log('params', params.row);
 				return (
 					<>
 						<ButtonGroup>
