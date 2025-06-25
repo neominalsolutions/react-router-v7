@@ -1,16 +1,12 @@
-import {
-    AppBar,
-    Box,
-    Container,
-    Toolbar
-} from '@mui/material';
+import { AppBar, Box, Container, Toolbar } from '@mui/material';
 import { NavLink, Outlet } from 'react-router';
+import './layout.css';
 
 function MainLayout() {
 	return (
 		<>
 			<Container maxWidth="xl">
-				{/* Layout menü kısmı */}₺
+				{/* Layout menü kısmı */}
 				<AppBar component="nav">
 					<Toolbar>
 						<Box
@@ -21,10 +17,18 @@ function MainLayout() {
 								minWidth: '100vw',
 							}}
 						>
-							<NavLink style={{ color: 'white', padding: '5px' }} to="/">
+							<NavLink
+								className={({ isActive }) => (isActive ? 'active' : '')}
+								style={{ color: 'white', padding: '5px' }}
+								to="/"
+							>
 								Anasayfa
 							</NavLink>
-							<NavLink style={{ color: 'white', padding: '5px' }} to="/about">
+							<NavLink
+								className={({ isActive }) => (isActive ? 'active' : '')}
+								style={{ color: 'white', padding: '5px' }}
+								to="/about"
+							>
 								Hakkımızda
 							</NavLink>
 						</Box>
