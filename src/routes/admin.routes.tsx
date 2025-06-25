@@ -38,13 +38,9 @@ export const adminRoutes: RouteObject = {
 		{
 			path: 'users/:id/posts', // users/1/posts
 			loader: async (request) => {
-				console.log('request', request);
-
 				const response = await axios.get(
 					`https://jsonplaceholder.typicode.com/posts?userId=${request.params.id}`
 				);
-
-				console.log('response', response.data);
 				return response.data;
 			},
 			Component: UserCommentsPage,
