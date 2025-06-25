@@ -22,7 +22,7 @@ function UserCommentsPage() {
 									margin: 2,
 									borderRadius: 5,
 									color: 'white',
-									background: 'black',
+									background: '#1976d2',
 								}}
 								key={index}
 							>
