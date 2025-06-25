@@ -2,6 +2,7 @@ import { type RouteObject } from 'react-router';
 import MainLayout from '../layouts/site/layout';
 import AdminHome from '../pages/admin/home/page';
 import UsersPage from '../pages/admin/users/page';
+import UserCommentsPage from '../pages/admin/users/comments/page';
 
 export const adminRoutes: RouteObject = {
 	path: 'admin',
@@ -32,6 +33,14 @@ export const adminRoutes: RouteObject = {
 				// 	});
 			},
 			Component: UsersPage,
+		},
+		{
+			path: 'users/:id/{comments}',
+			loader: async (params) => {
+				console.log('params', params);
+				return {};
+			},
+			Component: UserCommentsPage,
 		},
 	],
 };
