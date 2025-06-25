@@ -31,6 +31,13 @@ function MainLayout() {
 							>
 								Hakkımızda
 							</NavLink>
+							<NavLink
+								className={({ isActive }) => (isActive ? 'active' : '')}
+								style={{ color: 'white', padding: '5px' }}
+								to="/admin"
+							>
+								Admin
+							</NavLink>
 						</Box>
 					</Toolbar>
 				</AppBar>
