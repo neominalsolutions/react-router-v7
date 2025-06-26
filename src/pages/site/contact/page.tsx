@@ -1,3 +1,12 @@
+import {
+	Button,
+	FormControl,
+	FormGroup,
+	FormHelperText,
+	Input,
+	InputLabel,
+	TextField,
+} from '@mui/material';
 import { useRef } from 'react';
 import { Form, useActionData, useNavigation } from 'react-router';
 
@@ -20,17 +29,34 @@ export default function ContactPage() {
 		<div>
 			<h2>Contact Us</h2>
 			<Form ref={formRef} method="post">
-				<div>
-					<label>Name:</label>
-					<input type="text" name="name" required />
-				</div>
-				<div>
-					<label>Message:</label>
-					<textarea name="message" required></textarea>
-				</div>
-				<button type="submit" disabled={isSubmitting}>
-					{isSubmitting ? 'Sending...' : 'Send'}
-				</button>
+				<FormGroup>
+					<FormControl sx={{ mb: 2 }}>
+						<InputLabel>Name:</InputLabel>
+						<Input type="text" name="name" />
+						{action?.errors && (
+							<FormHelperText id="my-helper-text">
+								{action.errors.name}
+							</FormHelperText>
+						)}
+					</FormControl>
+					<FormControl sx={{ mb: 2 }}>
+						<TextField
+							placeholder="Message"
+							maxRows={10}
+							name="message"
+						></TextField>
+						{action?.errors && (
+							<FormHelperText id="my-helper-text">
+								{action.errors.message}
+							</FormHelperText>
+						)}
+					</FormControl>
+					<FormControl sx={{ mb: 2 }}>
+						<Button variant="outlined" type="submit" disabled={isSubmitting}>
+							{isSubmitting ? 'Sending...' : 'Send'}
+						</Button>
+					</FormControl>
+				</FormGroup>
 			</Form>
 		</div>
 	);
