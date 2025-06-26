@@ -1,10 +1,10 @@
+import axios from 'axios';
 import { type RouteObject } from 'react-router';
 import MainLayout from '../layouts/site/layout';
 import AdminHome from '../pages/admin/home/page';
 import UsersPage from '../pages/admin/users/page';
 import UserCommentsPage from '../pages/admin/users/posts/page';
-import axios from 'axios';
-import ErrorPage from '../error';
+import ErrorPage from '../pages/error';
 
 export const adminRoutes: RouteObject = {
 	path: 'admin',
@@ -36,6 +36,7 @@ export const adminRoutes: RouteObject = {
 			},
 			Component: UsersPage,
 			ErrorBoundary: ErrorPage,
+			
 		},
 		{
 			path: 'users/:id/posts', // users/1/posts
@@ -43,10 +44,11 @@ export const adminRoutes: RouteObject = {
 				const response = await axios.get(
 					`https://jsonplaceholder.typicode.com/posts?userId=${request.params.id}`
 				);
+
 				return response.data;
 			},
 			Component: UserCommentsPage,
-			ErrorBoundary: ErrorPage,
+			ErrorBoundary: ErrorPage, // herhangi bir hata meydana gelirse componentte o zaman bu component doma yükle
 		},
 	],
 };
