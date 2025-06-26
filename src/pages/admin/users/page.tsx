@@ -55,6 +55,9 @@ function UsersPage() {
 			},
 		},
 	];
+
+	throw new Error('Hata');
+
 	return (
 		<>
 			<Container sx={{ marginTop: 10 }}>

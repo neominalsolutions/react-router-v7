@@ -4,6 +4,7 @@ import AdminHome from '../pages/admin/home/page';
 import UsersPage from '../pages/admin/users/page';
 import UserCommentsPage from '../pages/admin/users/posts/page';
 import axios from 'axios';
+import ErrorPage from '../error';
 
 export const adminRoutes: RouteObject = {
 	path: 'admin',
@@ -34,16 +35,18 @@ export const adminRoutes: RouteObject = {
 				// 	});
 			},
 			Component: UsersPage,
+			ErrorBoundary: ErrorPage,
 		},
 		{
 			path: 'users/:id/posts', // users/1/posts
 			loader: async (request) => {
 				const response = await axios.get(
-					`https://jsonplaceholder.typicode.com/posts?userId=${request.params.id}`
+					`https://jsonplaceholder.typicode.com/post?userId=${request.params.id}`
 				);
 				return response.data;
 			},
 			Component: UserCommentsPage,
+			ErrorBoundary: ErrorPage,
 		},
 	],
 };

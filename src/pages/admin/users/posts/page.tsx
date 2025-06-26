@@ -4,10 +4,10 @@ import { useLoaderData, useParams } from 'react-router';
 
 // users/:id/comments id ile useParams() dan gelen id isim olarak eşleşmelidir.
 function UserCommentsPage() {
-	const params = useParams();
+	const params = useParams(); // eski yöntem burda param.id değerini yakalayı useEffect ile veri çekeriz.
 	console.log('params', params);
 
-	const data = useLoaderData();
+	const data = useLoaderData(); // yeni yöntem params loader function yakaladığımız için useParams gerek kalmadı.
 	console.log('data', data);
 
 	return (
