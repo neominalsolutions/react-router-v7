@@ -31,6 +31,14 @@ function MainLayout() {
 							>
 								Hakkımızda
 							</NavLink>
+
+							<NavLink
+								className={({ isActive }) => (isActive ? 'active' : '')}
+								style={{ color: 'white', padding: '5px' }}
+								to="/contact"
+							>
+								İletişim
+							</NavLink>
 							<NavLink
 								className={({ isActive }) => (isActive ? 'active' : '')}
 								style={{ color: 'white', padding: '5px' }}
