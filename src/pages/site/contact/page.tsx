@@ -1,7 +1,7 @@
 import { Form, useActionData, useNavigation } from 'react-router';
 
 export default function ContactPage() {
-	const navigation = useNavigation();
+	const navigation = useNavigation(); // form gönderilme state
 	const action = useActionData();
 
 	const isSubmitting = navigation.state === 'submitting';
