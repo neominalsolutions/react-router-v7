@@ -56,7 +56,7 @@ function UsersPage() {
 		},
 	];
 
-	throw new Error('Hata');
+	// throw new Error('Hata');
 
 	return (
 		<>

@@ -41,7 +41,7 @@ export const adminRoutes: RouteObject = {
 			path: 'users/:id/posts', // users/1/posts
 			loader: async (request) => {
 				const response = await axios.get(
-					`https://jsonplaceholder.typicode.com/post?userId=${request.params.id}`
+					`https://jsonplaceholder.typicode.com/posts?userId=${request.params.id}`
 				);
 				return response.data;
 			},
